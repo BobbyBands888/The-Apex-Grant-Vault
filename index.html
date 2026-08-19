@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Founders Grant Vault | Verified Micro-Grants & Funding</title>
+    <title>The Apex Grant Vault | Verified Micro-Grants & Funding</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 </head>
@@ -14,14 +14,14 @@
         <div>
             <h1 class="text-lg font-bold tracking-tight text-white flex items-center gap-2">
                 <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                Founders Vault <span class="text-xs px-2 py-0.5 rounded bg-zinc-800 text-zinc-400 font-mono">v2.4</span>
+                Apex Grant Vault <span class="text-xs px-2 py-0.5 rounded bg-zinc-800 text-zinc-400 font-mono">v2.4</span>
             </h1>
             <p class="text-xs text-zinc-400">Verified Equity-Free Grants & Startup Capital Sources.</p>
         </div>
         <div class="flex items-center gap-3">
             <span id="counter-badge" class="text-xs text-zinc-400 font-mono hidden sm:inline">Showing 5 of 50+ Sources</span>
             <button onclick="exportCSV()" class="text-xs bg-zinc-800 hover:bg-zinc-700 text-zinc-300 font-medium px-3 py-2 rounded-lg transition cursor-pointer">Export CSV</button>
-            <a href="https://buy.stripe.com/cNi00kd0F6qDdpX94P9EI05" class="text-xs bg-emerald-600 hover:bg-emerald-500 text-black font-semibold px-4 py-2 rounded-lg transition shadow-lg shadow-emerald-950/50">Unlock All ($19)</a>
+            <a href="https://buy.stripe.com/3cI3cwd0FaGTeu1gxh9EI06" class="text-xs bg-emerald-600 hover:bg-emerald-500 text-black font-semibold px-4 py-2 rounded-lg transition shadow-lg shadow-emerald-950/50">Unlock All ($19)</a>
         </div>
     </header>
 
@@ -69,7 +69,7 @@
                     <h3 class="text-xl font-bold text-white tracking-tight">Unlock 45+ More Verified Funding Sources</h3>
                     <p class="text-xs text-zinc-400 leading-relaxed">Get instant access to the full database including rolling deadlines, direct founder application portals, and CSV exports.</p>
                     <div>
-                        <a href="https://buy.stripe.com/cNi00kd0F6qDdpX94P9EI05" class="inline-block w-full py-3 px-6 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-xl transition shadow-lg shadow-emerald-950/50 text-sm">Unlock Full Vault — $19 (Lifetime Access)</a>
+                        <a href="https://buy.stripe.com/3cI3cwd0FaGTeu1gxh9EI06" class="inline-block w-full py-3 px-6 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-xl transition shadow-lg shadow-emerald-950/50 text-sm">Unlock Full Vault — $19 (Lifetime Access)</a>
                     </div>
                     <p class="text-[10px] text-zinc-500">Secured via Stripe. Instant redirect to full database download.</p>
                 </div>
@@ -79,7 +79,7 @@
 
     <!-- FOOTER -->
     <footer class="border-t border-zinc-800 py-6 px-6 text-center text-xs text-zinc-500">
-        Founders Vault &copy; 2026. Updated weekly. 
+        Apex Grant Vault &copy; 2026. Updated weekly. 
     </footer>
 
     <script>
@@ -112,7 +112,6 @@
                 return matchesCat && matchesSearch;
             });
 
-            // Show only first 5 items to simulate the free tier limit
             const displayItems = filtered.slice(0, 5);
             counterBadge.innerText = `Showing ${displayItems.length} of ${filtered.length}+ Sources`;
 
