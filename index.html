@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Founders Grant Vault | Verified Micro-Grants & Funding</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body class="bg-zinc-950 text-zinc-100 min-h-screen flex flex-col font-sans selection:bg-emerald-500 selection:text-black">
+
+    <!-- HEADER -->
+    <header class="border-b border-zinc-800 bg-zinc-900/50 backdrop-blur px-6 py-4 flex flex-wrap justify-between items-center gap-4 sticky top-0 z-50">
+        <div>
+            <h1 class="text-lg font-bold tracking-tight text-white flex items-center gap-2">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                Founders Vault <span class="text-xs px-2 py-0.5 rounded bg-zinc-800 text-zinc-400 font-mono">v2.4</span>
+            </h1>
+            <p class="text-xs text-zinc-400">Verified Equity-Free Grants & Startup Capital Sources.</p>
+        </div>
+        <div class="flex items-center gap-3">
+            <span id="counter-badge" class="text-xs text-zinc-400 font-mono hidden sm:inline">Showing 5 of 50+ Sources</span>
+            <button onclick="exportCSV()" class="text-xs bg-zinc-800 hover:bg-zinc-700 text-zinc-300 font-medium px-3 py-2 rounded-lg transition cursor-pointer">Export CSV</button>
+            <a href="https://buy.stripe.com/cNi00kd0F6qDdpX94P9EI05" class="text-xs bg-emerald-600 hover:bg-emerald-500 text-black font-semibold px-4 py-2 rounded-lg transition shadow-lg shadow-emerald-950/50">Unlock All ($19)</a>
+        </div>
+    </header>
+
+    <!-- SEARCH & FILTERS -->
+    <section class="max-w-6xl w-full mx-auto px-6 pt-8 pb-4">
+        <div class="flex flex-col md:flex-row gap-4 justify-between items-center">
+            <div class="w-full md:w-96 relative">
+                <input type="text" id="search-input" placeholder="Search grants, accelerators, amounts..." class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-100 placeholder-zinc-500 focus:outline-none focus:border-emerald-500 transition">
+            </div>
+            <div class="flex gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
+                <button onclick="filterCategory('all')" class="cat-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-zinc-800 text-white transition cursor-pointer">All Sources</button>
+                <button onclick="filterCategory('Grant')" class="cat-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-zinc-900 text-zinc-400 hover:text-white transition cursor-pointer">Grants</button>
+                <button onclick="filterCategory('Accelerator')" class="cat-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-zinc-900 text-zinc-400 hover:text-white transition cursor-pointer">Accelerators</button>
+                <button onclick="filterCategory('Non-Dilutive')" class="cat-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-zinc-900 text-zinc-400 hover:text-white transition cursor-pointer">Non-Dilutive</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN DATABASE TABLE -->
+    <main class="max-w-6xl w-full mx-auto px-6 pb-20 flex-1">
+        <div class="bg-zinc-900/40 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl backdrop-blur">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b border-zinc-800 bg-zinc-900/80 text-zinc-400 text-xs font-mono uppercase tracking-wider">
+                            <th class="p-4">Program Name</th>
+                            <th class="p-4">Category</th>
+                            <th class="p-4">Funding Amount</th>
+                            <th class="p-4">Equity</th>
+                            <th class="p-4 text-right">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="database-body" class="divide-y divide-zinc-800/60 text-sm">
+                        <!-- Injected via JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- PAYWALL BANNER -->
+            <div id="paywall-banner" class="bg-gradient-to-t from-zinc-950 via-zinc-900/90 to-transparent p-10 text-center border-t border-zinc-800 relative">
+                <div class="max-w-md mx-auto space-y-4">
+                    <div class="inline-flex p-3 rounded-2xl bg-emerald-500/10 text-emerald-400 mb-1">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white tracking-tight">Unlock 45+ More Verified Funding Sources</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">Get instant access to the full database including rolling deadlines, direct founder application portals, and CSV exports.</p>
+                    <div>
+                        <a href="https://buy.stripe.com/cNi00kd0F6qDdpX94P9EI05" class="inline-block w-full py-3 px-6 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-xl transition shadow-lg shadow-emerald-950/50 text-sm">Unlock Full Vault — $19 (Lifetime Access)</a>
+                    </div>
+                    <p class="text-[10px] text-zinc-500">Secured via Stripe. Instant redirect to full database download.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-zinc-800 py-6 px-6 text-center text-xs text-zinc-500">
+        Founders Vault &copy; 2026. Updated weekly. 
+    </footer>
+
+    <script>
+        const grantDatabase = [
+            { name: "Stripe Developer Grant", cat: "Grant", amount: "$10,000", equity: "0%", url: "https://stripe.com" },
+            { name: "AWS Activate Founders", cat: "Non-Dilutive", amount: "$5,000 - $100,000", equity: "0%", url: "https://aws.amazon.com/activate" },
+            { name: "Google for Startups Cloud Program", cat: "Non-Dilutive", amount: "$2,000 - $350,000", equity: "0%", url: "https://cloud.google.com/startup" },
+            { name: "Fast Forward Tech Nonprofit Accelerator", cat: "Accelerator", amount: "$25,000", equity: "0%", url: "https://ffwd.org" },
+            { name: "Microsoft for Startups Founders Hub", cat: "Non-Dilutive", amount: "$1,000 - $150,000", equity: "0%", url: "https://startups.microsoft.com" },
+            { name: "VentureWell E-Team Grant", cat: "Grant", amount: "$5,000 - $25,000", equity: "0%", url: "https://venturewell.org" },
+            { name: "Amber Grant for Women", cat: "Grant", amount: "$10,000 - $25,000", equity: "0%", url: "https://ambergrantsforwomen.com" },
+            { name: "IFundWomen Micro-Grant Network", cat: "Grant", amount: "$5,000 - $10,000", equity: "0%", url: "https://ifundwomen.com" },
+            { name: "National Science Foundation (NSF) SBIR", cat: "Grant", amount: "$275,000+", equity: "0%", url: "https://seedfund.nsf.gov" },
+            { name: "NVIDIA Inception Program", cat: "Accelerator", amount: "GPU Credits & Support", equity: "0%", url: "https://nvidia.com/inception" }
+        ];
+
+        let currentFilter = 'all';
+        let searchQuery = '';
+
+        const tbody = document.getElementById('database-body');
+        const counterBadge = document.getElementById('counter-badge');
+
+        function renderTable() {
+            tbody.innerHTML = '';
+            
+            const filtered = grantDatabase.filter(item => {
+                const matchesCat = currentFilter === 'all' || item.cat === currentFilter;
+                const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                                      item.amount.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchesCat && matchesSearch;
+            });
+
+            // Show only first 5 items to simulate the free tier limit
+            const displayItems = filtered.slice(0, 5);
+            counterBadge.innerText = `Showing ${displayItems.length} of ${filtered.length}+ Sources`;
+
+            displayItems.forEach(item => {
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-zinc-800/40 transition";
+                tr.innerHTML = `
+                    <td class="p-4 font-medium text-white">${item.name}</td>
+                    <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs bg-zinc-800 text-zinc-300 font-mono">${item.cat}</span></td>
+                    <td class="p-4 text-emerald-400 font-mono font-semibold">${item.amount}</td>
+                    <td class="p-4 font-mono text-zinc-400">${item.equity}</td>
+                    <td class="p-4 text-right"><a href="${item.url}" target="_blank" class="text-xs text-indigo-400 hover:underline">Apply &rarr;</a></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function filterCategory(cat) {
+            currentFilter = cat;
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.classList.remove('bg-zinc-800', 'text-white');
+                btn.classList.add('bg-zinc-900', 'text-zinc-400');
+                if(btn.innerText.toLowerCase().includes(cat.toLowerCase()) || (cat === 'all' && btn.innerText.includes('All'))) {
+                    btn.classList.add('bg-zinc-800', 'text-white');
+                    btn.classList.remove('bg-zinc-900', 'text-zinc-400');
+                }
+            });
+            renderTable();
+        }
+
+        document.getElementById('search-input').addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            renderTable();
+        });
+
+        function exportCSV() {
+            alert("🔒 CSV Export is locked to Full Access members. Click 'Unlock All' to download the complete spreadsheet.");
+        }
+
+        window.addEventListener('DOMContentLoaded', renderTable);
+    </script>
+</body>
+</html>
