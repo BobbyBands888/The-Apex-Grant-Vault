@@ -1,51 +1,137 @@
-Program Name,Category,Funding Amount,Equity,Application URL
-Stripe Developer Grant,Grant,$10,000,0%,https://stripe.com
-AWS Activate Founders,Non-Dilutive,"$5,000 - $100,000",0%,https://aws.amazon.com/activate
-Google for Startups Cloud Program,Non-Dilutive,"$2,000 - $350,000",0%,https://cloud.google.com/startup
-Fast Forward Tech Nonprofit Accelerator,Accelerator,$25,000,0%,https://ffwd.org
-Microsoft for Startups Founders Hub,Non-Dilutive,"$1,000 - $150,000",0%,https://startups.microsoft.com
-VentureWell E-Team Grant,Grant,"$5,000 - $25,000",0%,https://venturewell.org
-Amber Grant for Women,Grant,"$10,000 - $25,000",0%,https://ambergrantsforwomen.com
-IFundWomen Micro-Grant Network,Grant,"$5,000 - $10,000",0%,https://ifundwomen.com
-National Science Foundation (NSF) SBIR,Grant,"$275,000+",0%,https://seedfund.nsf.gov
-NVIDIA Inception Program,Accelerator,"GPU Credits & Support",0%,https://nvidia.com/inception
-Y Combinator Startup School,Accelerator,"Community & Perks",0%,https://startupschool.org
-Techstars Accelerator,Accelerator,$120,000,6%,https://techstars.com
-500 Global Accelerator,Accelerator,$150,000,6%,https://500.co
-Antler Global Startup Generator,Accelerator,$250,000,10%,https://antler.co
-MassChallenge Accelerator,Accelerator,"Cash Prizes (No Equity)",0%,https://masschallenge.org
-NewME Accelerator,Accelerator,"Resources & Mentorship",0%,https://newme.accelerator
-Roddenberry Fellowship,Grant,$50,000,0%,https://roddenberryfoundation.org
-Echoing Green Fellowship,Grant,"$80,000 - $90,000",0%,https://echoinggreen.org
-Hellemans Foundation Grant,Grant,Varies,0%,https://hellemansfoundation.org
-Kauffman Foundation Grants,Grant,Varies,0%,https://kauffman.org
-SBA Small Business Innovation Research,Grant,"$150,000 - $1,000,000+",0%,https://sbir.gov
-SBIR / STTR Phase I,Grant,"$150,000 - $250,000",0%,https://sbir.gov
-Black Founder Startup Grant (SoGal),Grant,"$5,000 - $10,000",0%,https://sogalfoundation.com
-Cartier Women's Initiative,Grant,"$30,000 - $100,000",0%,https://cartierwomensinitiative.com
-Tory Burch Foundation Fellowship,Grant,$5,000,0%,https://toryburchfoundation.org
-Comcast RISE Investment,Grant,$10,000,0%,https://comcastrise.com
-FedEx Small Business Grant,Grant,"$15,000 - $50,000",0%,"https://fedex.com/en-us/small-business/grant-contest.html"
-Visa Everywhere Initiative,Grant,"$10,000 - $50,000",0%,"https://usa.visa.com/run-your-business/visa-everywhere-initiative.html"
-HerRise Micro-Grant,Grant,"$1,000 - $5,000",0%,https://herrise.org
-Galaxy Grants,Grant,"$2,500 - $5,000",0%,https://galaxygrants.com
-Backstage Capital,Accelerator,$100,000,Custom,https://backstagecapital.com
-TechRise Chicago,Grant,"$5,000 - $25,000",0%,https://techrise.org
-Halcyon Incubator,Accelerator,"In-Kind Support & Stipend",0%,https://halcyonhouse.org
-Alchemist Accelerator,Accelerator,$25,000,5%,https://alchemistaccelerator.com
-Techstars Anywhere,Accelerator,$120,000,6%,https://techstars.com
-Plug and Play Accelerator,Accelerator,Varies,Custom,https://plugandplaytechcenter.com
-Startupbootcamp,Accelerator,"€15,000",8%,https://startupbootcamp.org
-MassCEC Catalyst Program,Grant,"$65,000",0%,https://masscec.com
-SBIR Phase II,Grant,"$750,000 - $1,500,000",0%,https://sbir.gov
-OpenAI for Startups,Non-Dilutive,"API Credits",0%,https://openai.com
-Anthropic Startup Program,Non-Dilutive,"API Credits",0%,https://anthropic.com
-IBM Hyper Protect Accelerator,Accelerator,"In-Kind Support & Credits",0%,https://ibm.com
-Oracle for Startups,Non-Dilutive,"Cloud Credits",0%,https://oracle.com/cloud/startups
-Herotechies Grant,Grant,"$1,000 - $5,000",0%,https://herotechies.com
-Nav.com Small Business Grant,Grant,$10,000,0%,https://nav.com
-Hello Alice Small Business Grant,Grant,"$5,000 - $25,000",0%,https://helloalice.com
-Amber Grant Monthly,Grant,$10,000,0%,https://ambergrantsforwomen.com
-Skip Small Business Grant,Grant,"$1,000 - $5,000",0%,https://helloskip.com
-DigitalOcean Hatch,Non-Dilutive,"$1,000 - $10,000",0%,https://digitalocean.com/hatch
-HerSuiteSpot Grant,Grant,"$1,000 - $5,000",0%,https://hersuitespot.com
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Full Vault Access | The Apex Grant Vault</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body class="bg-zinc-950 text-zinc-100 min-h-screen flex flex-col font-sans selection:bg-emerald-500 selection:text-black">
+
+    <!-- HEADER -->
+    <header class="border-b border-zinc-800 bg-zinc-900/50 backdrop-blur px-6 py-4 flex flex-wrap justify-between items-center gap-4 sticky top-0 z-50">
+        <div>
+            <h1 class="text-lg font-bold tracking-tight text-white flex items-center gap-2">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                Apex Grant Vault <span class="text-xs px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-mono">Full Access Unlocked</span>
+            </h1>
+            <p class="text-xs text-zinc-400">All 50+ verified startup funding sources and direct portals.</p>
+        </div>
+        <div class="flex items-center gap-3">
+            <span id="counter-badge" class="text-xs text-zinc-400 font-mono">Loading vault...</span>
+            <a href="full-vault.csv" download class="text-xs bg-zinc-800 hover:bg-zinc-700 text-zinc-300 font-medium px-3 py-2 rounded-lg transition cursor-pointer">Download CSV</a>
+        </div>
+    </header>
+
+    <!-- SEARCH & FILTERS -->
+    <section class="max-w-6xl w-full mx-auto px-6 pt-8 pb-4">
+        <div class="flex flex-col md:flex-row gap-4 justify-between items-center">
+            <div class="w-full md:w-96 relative">
+                <input type="text" id="search-input" placeholder="Search all 50+ grants, accelerators, amounts..." class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-100 placeholder-zinc-500 focus:outline-none focus:border-emerald-500 transition">
+            </div>
+            <div class="flex gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
+                <button onclick="filterCategory('all')" class="cat-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-zinc-800 text-white transition cursor-pointer">All Sources</button>
+                <button onclick="filterCategory('Grant')" class="cat-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-zinc-900 text-zinc-400 hover:text-white transition cursor-pointer">Grants</button>
+                <button onclick="filterCategory('Accelerator')" class="cat-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-zinc-900 text-zinc-400 hover:text-white transition cursor-pointer">Accelerators</button>
+                <button onclick="filterCategory('Non-Dilutive')" class="cat-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-zinc-900 text-zinc-400 hover:text-white transition cursor-pointer">Non-Dilutive</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN DATABASE TABLE -->
+    <main class="max-w-6xl w-full mx-auto px-6 pb-20 flex-1">
+        <div class="bg-zinc-900/40 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl backdrop-blur">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b border-zinc-800 bg-zinc-900/80 text-zinc-400 text-xs font-mono uppercase tracking-wider">
+                            <th class="p-4">Program Name</th>
+                            <th class="p-4">Category</th>
+                            <th class="p-4">Funding Amount</th>
+                            <th class="p-4">Equity</th>
+                            <th class="p-4 text-right">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="database-body" class="divide-y divide-zinc-800/60 text-sm">
+                        <!-- Loaded dynamically via CSV -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-zinc-800 py-6 px-6 text-center text-xs text-zinc-500">
+        Apex Grant Vault &copy; 2026. Thank you for your purchase.
+    </footer>
+
+    <script>
+        let fullDatabase = [];
+        let currentFilter = 'all';
+        let searchQuery = '';
+
+        const tbody = document.getElementById('database-body');
+        const counterBadge = document.getElementById('counter-badge');
+
+        // Fetch and parse the clean CSV file automatically
+        Papa.parse("full-vault.csv", {
+            download: true,
+            header: true,
+            skipEmptyLines: true,
+            complete: function(results) {
+                fullDatabase = results.data;
+                renderTable();
+            },
+            error: function(err) {
+                tbody.innerHTML = `<tr><td colspan="5" class="p-6 text-center text-red-400">Error loading database file. Please use the download link above.</td></tr>`;
+            }
+        });
+
+        function renderTable() {
+            tbody.innerHTML = '';
+            
+            const filtered = fullDatabase.filter(item => {
+                if (!item["Program Name"]) return false;
+                const matchesCat = currentFilter === 'all' || item["Category"] === currentFilter;
+                const matchesSearch = item["Program Name"].toLowerCase().includes(searchQuery.toLowerCase()) || 
+                                      item["Funding Amount"].toLowerCase().includes(searchQuery.toLowerCase());
+                return matchesCat && matchesSearch;
+            });
+
+            counterBadge.innerText = `Showing ${filtered.length} of ${fullDatabase.length} Sources`;
+
+            filtered.forEach(item => {
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-zinc-800/40 transition";
+                tr.innerHTML = `
+                    <td class="p-4 font-medium text-white">${item["Program Name"]}</td>
+                    <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs bg-zinc-800 text-zinc-300 font-mono">${item["Category"]}</span></td>
+                    <td class="p-4 text-emerald-400 font-mono font-semibold">${item["Funding Amount"]}</td>
+                    <td class="p-4 font-mono text-zinc-400">${item["Equity"]}</td>
+                    <td class="p-4 text-right"><a href="${item["Application URL"]}" target="_blank" class="text-xs text-indigo-400 hover:underline">Apply &rarr;</a></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function filterCategory(cat) {
+            currentFilter = cat;
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.classList.remove('bg-zinc-800', 'text-white');
+                btn.classList.add('bg-zinc-900', 'text-zinc-400');
+                if(btn.innerText.toLowerCase().includes(cat.toLowerCase()) || (cat === 'all' && btn.innerText.includes('All'))) {
+                    btn.classList.add('bg-zinc-800', 'text-white');
+                    btn.classList.remove('bg-zinc-900', 'text-zinc-400');
+                }
+            });
+            renderTable();
+        }
+
+        document.getElementById('search-input').addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            renderTable();
+        });
+    </script>
+</body>
+</html>
